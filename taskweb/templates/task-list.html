@@ -1,0 +1,33 @@
+{%extends 'base.html'%}
+{%block body%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table">
+                <tr>
+                    <th>Task_Name</th>
+                    <th>User</th>
+                    <th>Created_Date</th>
+                    <th>Status</th>
+                </tr>
+                {%for t in tasks%}
+                <tr>
+                    <td>{{t.task_name}}</td>
+                    <td>{{t.user}}</td>
+                    <td>{{t.created_date}}</td>
+                    <td>{{t.status}}</td>
+                    <td>
+                        <a href="{%url 'task-detail' t.id%}" class="btn btn-outline-info">View</a>
+                        <a href="{%url 'task-delete' t.id%}"class="btn btn-outline-danger">Delete</a>
+                        <a href="{%url 'task-edit' t.id%}" class="btn btn-outline-warning">Edit</a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
+</div>
+{%endblock%}

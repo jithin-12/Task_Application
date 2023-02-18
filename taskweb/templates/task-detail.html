@@ -1,0 +1,19 @@
+{%extends 'base.html'%}
+{%block body%}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">name:{{task.task_name}}</li>
+                  <li class="list-group-item">date:{{task.created_date}}</li>
+                  <li class="list-group-item">status:{{task.status}}</li>
+                </ul>
+              </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+{%endblock%}
